@@ -140,8 +140,8 @@ export function palette(mode: 'light' | 'dark') {
       disabled: GREY[600],
     },
     background: {
-      paper: GREY[800],
-      default: GREY[900],
+      paper: '#343332',
+      default: '#222222',
       neutral: alpha(GREY[500], 0.12),
     },
     action: {

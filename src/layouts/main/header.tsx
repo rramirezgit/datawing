@@ -1,21 +1,18 @@
 // @mui
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import AppBar from '@mui/material/AppBar';
-import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
-import Badge, { badgeClasses } from '@mui/material/Badge';
 // hooks
 import { useOffSetTop } from 'src/hooks/use-off-set-top';
 import { useResponsive } from 'src/hooks/use-responsive';
 // theme
-import { bgBlur } from 'src/theme/css';
 // routes
 import { paths } from 'src/routes/paths';
-import Image from 'next/image';
+import Logo from 'src/sections/_examples/extra/animate-view/other/logo';
+
 import { HEADER } from '../config-layout';
 import { navConfig } from './config-navigation';
 import NavMobile from './nav/mobile';
@@ -23,7 +20,6 @@ import NavDesktop from './nav/desktop';
 //
 import { SettingsButton, HeaderShadow } from '../_common';
 import NavButton from '../_common/navButton';
-
 // ----------------------------------------------------------------------
 
 export default function Header() {
@@ -46,24 +42,11 @@ export default function Header() {
             easing: theme.transitions.easing.easeInOut,
             duration: theme.transitions.duration.shorter,
           }),
-          ...(offsetTop && {
-            ...bgBlur({
-              color: theme.palette.background.default,
-            }),
-            height: {
-              md: HEADER.H_DESKTOP_OFFSET,
-            },
-          }),
+          background: theme.palette.mode === 'dark' ? '#222222' : '#fff 0.05%',
         }}
       >
         <Container sx={{ height: 1, display: 'flex', alignItems: 'center' }}>
-          <Image
-            src="/logo/logo_full.svg"
-            alt="logo"
-            width={119}
-            height={36}
-            style={{ margin: '0 20px' }}
-          />
+          <Logo />
 
           {mdUp && <NavDesktop offsetTop={offsetTop} data={navConfig} />}
 

@@ -10,7 +10,7 @@ import MainLayout from 'src/layouts/main';
 import ScrollProgress from 'src/components/scroll-progress';
 //
 import HomeHero from '../home-hero';
-import HomeMinimal from '../home-minimal';
+import HomeCars from '../home-cards';
 import HomePricing from '../home-pricing';
 import HomeDarkMode from '../home-dark-mode';
 import HomeLookingFor from '../home-looking-for';
@@ -19,6 +19,8 @@ import HomeColorPresets from '../home-color-presets';
 import HomeAdvertisement from '../home-advertisement';
 import HomeCleanInterfaces from '../home-clean-interfaces';
 import HomeHugePackElements from '../home-hugepack-elements';
+import HomeServicios from '../home-services';
+import HomeTeam from '../home-team';
 
 // ----------------------------------------------------------------------
 
@@ -57,16 +59,18 @@ export default function HomeView() {
 
       <HomeHero />
 
-      {/* <Box
+      <Box
         sx={{
           overflow: 'hidden',
           position: 'relative',
           bgcolor: 'background.default',
         }}
       >
-        <HomeMinimal />
+        <HomeCars />
+        <HomeServicios />
+        <HomeTeam />
 
-        <HomeHugePackElements />
+        {/* <HomeHugePackElements />
 
         <Box sx={{ position: 'relative' }}>
           <StyledPolygon />
@@ -84,8 +88,8 @@ export default function HomeView() {
 
         <HomeLookingFor />
 
-        <HomeAdvertisement />
-      </Box> */}
+        <HomeAdvertisement /> */}
+      </Box>
     </MainLayout>
   );
 }

@@ -3,30 +3,25 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 // @mui
 import { styled, alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-import Rating from '@mui/material/Rating';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 // routes
-import { paths } from 'src/routes/paths';
 // theme
 import { primaryFont } from 'src/theme/typography';
-import { textGradient, bgGradient } from 'src/theme/css';
+import { textGradient, bgGradient, bgBlur } from 'src/theme/css';
 // layouts
 import { HEADER } from 'src/layouts/config-layout';
 // components
-import Iconify from 'src/components/iconify';
-import { RouterLink } from 'src/routes/components';
 import { MotionContainer, varFade } from 'src/components/animate';
+import SearchField from 'src/components/search-field/search-field';
 
 // ----------------------------------------------------------------------
 
 const StyledRoot = styled('div')(({ theme }) => ({
   ...bgGradient({
-    color: alpha(theme.palette.background.default, theme.palette.mode === 'light' ? 0.9 : 0.94),
-    imgUrl: '/assets/background/overlay_3.jpg',
+    color: alpha(theme.palette.background.default, theme.palette.mode === 'light' ? 0 : 0.1),
+    imgUrl: '/assets/background/Hero.jpg',
   }),
   width: '100%',
   height: '100vh',
@@ -41,6 +36,10 @@ const StyledRoot = styled('div')(({ theme }) => ({
 const StyledWrapper = styled('div')(({ theme }) => ({
   height: '100%',
   overflow: 'hidden',
+  background:
+    theme.palette.mode === 'dark'
+      ? 'linear-gradient(180deg, #222 0.05%, rgba(34, 34, 34, 0.14) 51.16%, rgba(34, 34, 34, 0.00) 82.49%)'
+      : 'linear-gradient(180deg, #fff 0.05%, rgba(255, 255, 255, 0.14) 51.16%, rgba(255, 255, 255, 0.00) 82.49%)',
   position: 'relative',
   [theme.breakpoints.up('md')]: {
     marginTop: HEADER.H_DESKTOP_OFFSET,
@@ -137,11 +136,31 @@ export default function HomeHero() {
         </StyledTextGradient>
       </m.div>
 
-      <m.div variants={varFade().in}>
-        <Typography variant="body2" sx={{ textAlign: 'center' }}>
-          Rastreo, Mapeo y Mucho Más: Soluciones Innovadoras para tus Necesidades
-        </Typography>
-      </m.div>
+      <Stack alignItems="center" justifyContent="center" gap={2}>
+        <m.div variants={varFade().in}>
+          <Typography variant="body1" sx={{ textAlign: 'center' }}>
+            Rastreo, Mapeo y Mucho Más: Soluciones Innovadoras para tus Necesidades
+          </Typography>
+        </m.div>
+
+        <m.div
+          variants={varFade().inUp}
+          style={{
+            width: '100%',
+            padding: '8px',
+            borderRadius: '4px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '8px',
+          }}
+        >
+          <Typography variant="body2" sx={{ textAlign: 'center' }}>
+            Con IA te ayudamos a definir el mejor estudio para tu terreno.
+          </Typography>
+          <SearchField />
+        </m.div>
+      </Stack>
     </Stack>
   );
 
