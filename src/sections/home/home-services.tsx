@@ -18,6 +18,8 @@ import Link from 'next/link';
 // ----------------------------------------------------------------------
 
 const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
+  height: '50px',
+  width: '230px',
   '& .MuiToggleButtonGroup-grouped': {
     margin: theme.spacing(0.5),
     border: 0,
@@ -65,6 +67,7 @@ const ToggleButtonsHome = () => {
             value="Satelites"
             aria-label="satelites"
             sx={{
+              width: '50%',
               '&.Mui-selected': {
                 color: '#EB5117',
                 backgroundColor: '#EB511714',
@@ -80,6 +83,8 @@ const ToggleButtonsHome = () => {
             value="Drones"
             aria-label="drones"
             sx={{
+              width: '50%',
+
               '&.Mui-selected': {
                 color: '#EB5117',
                 backgroundColor: '#EB511714',
@@ -90,6 +95,9 @@ const ToggleButtonsHome = () => {
             }}
           >
             <svg
+              style={{
+                marginRight: 5,
+              }}
               width="19"
               height="19"
               viewBox="0 0 19 19"

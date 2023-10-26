@@ -53,14 +53,14 @@ export default function Header() {
           <Box sx={{ flexGrow: 1 }} />
 
           <Stack alignItems="center" direction={{ xs: 'row' }}>
-            <SettingsButton
+            {/* <SettingsButton
               sx={{
                 ml: { xs: 1, md: 0 },
                 mr: { md: 2 },
               }}
-            />
+            /> */}
 
-            {mdUp && <NavButton title="Login" path={paths.dashboard.root} />}
+            {mdUp && <NavButton title="Login" path={paths.dashboard.root} variant="outlined" />}
             {mdUp && (
               <NavButton title="Cotizar" path={paths.quote} variant="contained" color="primary" />
             )}

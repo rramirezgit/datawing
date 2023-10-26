@@ -14,11 +14,11 @@ export const navConfig = [
   {
     title: 'Precios',
     icon: <Iconify icon="solar:atom-bold-duotone" />,
-    path: paths.components,
+    path: paths.pricing,
   },
   {
     title: 'Quienes Somos',
     icon: <Iconify icon="solar:atom-bold-duotone" />,
-    path: paths.components,
+    path: paths.about,
   },
 ];

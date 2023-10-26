@@ -69,26 +69,6 @@ export default function HomeView() {
         <HomeCars />
         <HomeServicios />
         <HomeTeam />
-
-        {/* <HomeHugePackElements />
-
-        <Box sx={{ position: 'relative' }}>
-          <StyledPolygon />
-          <HomeForDesigner />
-          <StyledPolygon anchor="bottom" />
-        </Box>
-
-        <HomeDarkMode />
-
-        <HomeColorPresets />
-
-        <HomeCleanInterfaces />
-
-        <HomePricing />
-
-        <HomeLookingFor />
-
-        <HomeAdvertisement /> */}
       </Box>
     </MainLayout>
   );
