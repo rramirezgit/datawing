@@ -17,6 +17,7 @@ const ROOTS = {
 // ----------------------------------------------------------------------
 
 export const paths = {
+  home: '/',
   quote: '/quote',
   //
   comingSoon: '/coming-soon',

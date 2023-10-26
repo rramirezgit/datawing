@@ -22,11 +22,11 @@ import Iconify from 'src/components/iconify';
 
 const LINKS = [
   {
-    headline: 'Minimal',
+    headline: 'DataWing',
     children: [
-      { name: 'About us', href: paths.about },
-      { name: 'Contact us', href: paths.contact },
-      { name: 'FAQs', href: paths.faqs },
+      { name: 'Home', href: paths.home },
+      { name: 'Precios', href: paths.pricing },
+      { name: 'Quienes somos', href: paths.about },
     ],
   },
   {
@@ -38,7 +38,7 @@ const LINKS = [
   },
   {
     headline: 'Contact',
-    children: [{ name: 'support@minimals.cc', href: '#' }],
+    children: [{ name: 'contacto@datawing.mx', href: '#' }],
   },
 ];
 
@@ -47,29 +47,29 @@ const LINKS = [
 export default function Footer() {
   const pathname = usePathname();
 
-  const isHome = pathname === '/';
+  // const isHome = pathname === '/';
 
-  const simpleFooter = (
-    <Box
-      component="footer"
-      sx={{
-        py: 5,
-        textAlign: 'center',
-        position: 'relative',
-        bgcolor: 'background.default',
-      }}
-    >
-      <Container>
-        <Logo sx={{ mb: 1, mx: 'auto' }} />
+  // const simpleFooter = (
+  //   <Box
+  //     component="footer"
+  //     sx={{
+  //       py: 5,
+  //       textAlign: 'center',
+  //       position: 'relative',
+  //       bgcolor: 'background.default',
+  //     }}
+  //   >
+  //     <Container>
+  //       <Logo sx={{ mb: 1, mx: 'auto' }} />
 
-        <Typography variant="caption" component="div">
-          © All rights reserved
-          <br /> made by
-          <Link href="https://minimals.cc/"> minimals.cc </Link>
-        </Typography>
-      </Container>
-    </Box>
-  );
+  //       <Typography variant="caption" component="div">
+  //         © All rights reserved
+  //         <br /> made by
+  //         <Link href="https://minimals.cc/"> minimals.cc </Link>
+  //       </Typography>
+  //     </Container>
+  //   </Box>
+  // );
 
   const mainFooter = (
     <Box
@@ -163,11 +163,12 @@ export default function Footer() {
         </Grid>
 
         <Typography variant="body2" sx={{ mt: 10 }}>
-          © 2021. All rights reserved
+          © 2023. All rights reserved
         </Typography>
       </Container>
     </Box>
   );
 
-  return isHome ? simpleFooter : mainFooter;
+  // return isHome ? simpleFooter : mainFooter;
+  return mainFooter;
 }
